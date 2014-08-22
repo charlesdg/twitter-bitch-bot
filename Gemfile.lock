@@ -38,6 +38,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    curb (0.8.6)
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.1)
@@ -141,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  curb
   jbuilder (~> 2.0)
   jquery-rails
   pg
