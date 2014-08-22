@@ -45,3 +45,6 @@ gem 'twitter'
 
 gem 'pg'
 
+# Curl
+gem 'curb'
+
