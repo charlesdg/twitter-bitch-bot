@@ -43,3 +43,5 @@ gem 'rename'
 # twitter
 gem 'twitter'
 
+gem 'pg'
+

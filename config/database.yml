@@ -12,10 +12,10 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: twitter_bitches
+  database: twitter-bitches-local
   pool: 5
   host: localhost
-  username: cidoum
+  username: charlesdegroote
   password:
 
 # Warning: The database defined as "test" will be erased and

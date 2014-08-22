@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweets: 1
+  following: 1
+  followers: 1
+  username_twitter: MyString
+  klout_id: MyString
+  klout_score: 1
+
+two:
+  tweets: 1
+  following: 1
+  followers: 1
+  username_twitter: MyString
+  klout_id: MyString
+  klout_score: 1
