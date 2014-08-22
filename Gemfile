@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 
 gem 'rename'
 
+# twitter
+gem 'twitter'
+
