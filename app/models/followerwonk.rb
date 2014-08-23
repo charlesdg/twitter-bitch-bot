@@ -14,21 +14,23 @@ class Followerwonk < ActiveRecord::Base
     signature = Crypto.generate_signature(@@access_id, @@secret_key, timestamp)
     url << "AccessID=#{@@access_id};Timestamp=#{timestamp};Signature=#{signature}"
 
+    puts url
+
     response = HTTParty.get(url)
 
+    puts response
+
     data = response["_embedded"].collect do |user|
-        {
-          user_id: user["user_id"],
-          social_authority: user["social_authority"],
-          screen_name: user["screen_name"]
-        }   
-      end
+      {
+        user_id: user["user_id"],
+        social_authority: user["social_authority"],
+        screen_name: user["screen_name"]
+      }   
+    end
 
     puts data
 
     data
   end
-		#http://api.followerwonk.com/social-authority?{screen_name};{user_id};{AccessID};{Timestamp};{Signature}
-	  #https://api.followerwonk.com/social-authority?screen_name=randfish;AccessID=ACCESS_ID;Timestamp=TIMESTAMP;Signature=SIGNATURE_HMAC
 
-	end
+end
