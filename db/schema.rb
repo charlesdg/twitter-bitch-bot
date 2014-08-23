@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823104405) do
+ActiveRecord::Schema.define(version: 20140823160011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "followers", force: true do |t|
+    t.integer  "tweets"
+    t.integer  "following"
+    t.integer  "followers"
+    t.string   "username_twitter"
+    t.string   "klout_id"
+    t.integer  "klout_score"
+    t.string   "location"
+    t.string   "lang"
+    t.datetime "last_tweet"
+    t.integer  "influencer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "influencers", force: true do |t|
     t.integer  "tweets"
@@ -26,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140823104405) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "twitter_id",       limit: 8
+    t.string   "location"
   end
 
   create_table "topics", force: true do |t|

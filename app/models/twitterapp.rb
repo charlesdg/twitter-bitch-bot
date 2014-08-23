@@ -67,6 +67,7 @@ class Twitterapp < ActiveRecord::Base
 				#puts "#{tweet.user.screen_name}: #{tweet.text}"
 				if @influencers.include? tweet.user.id
 					@influencers[tweet.user.id] += 1
+					p tweet.user.location
 					#Influencer.create(tweet.user.statuses_count, tweet.user.friends_count, tweet.user.followers_count, tweet.user.screen_name, tweet.user.id)
 				else
 					@influencers[tweet.user.id] = 1
