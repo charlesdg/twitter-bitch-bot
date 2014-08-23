@@ -1,9 +1,8 @@
 class FollowerwonkController < ApplicationController
 	
 	def index
-		array = [:charlesdg, :cidoum, :nifinet]
-		@followerwonk = Followerwonk.test(array)
-		p @followerwonk.class
+		users = [:charlesdg, :cidoum, :nifinet, :jonschock]
+		@data = Followerwonk.get_social_authority(users)
 	end
 
 end

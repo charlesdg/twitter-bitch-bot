@@ -48,6 +48,4 @@ gem 'pg'
 # Curl
 gem 'curb'
 
-# Followerwonk
-  gem 'social_authority', git: 'git://github.com/nandosousafr/social_authority.git'
 
