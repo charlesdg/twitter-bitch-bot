@@ -12,6 +12,13 @@ class Influencer < ActiveRecord::Base
 		@influencer.klout_score = Klout.get_score(@klout_id)
 		@influencer.twitter_id = twitter_id
 		@influencer.save!
+
+		Klout.get_topics(@klout_id).each do |topic|
+			@topic = Topic.new
+			@topic.influencer_id = @influencer.id
+			@topic.name = topic
+			@topic.save!
+		end
 	end
 
 end

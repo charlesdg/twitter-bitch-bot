@@ -4,9 +4,12 @@ class Klout < ActiveRecord::Base
 
 		def self.get_id(twitter_id)
 			http = Curl.get("http://api.klout.com/v2/identity.json/tw/#{twitter_id}?key=#{@@key}")
-			response = JSON.parse(http.body_str, symbolize_names: true)
-			id =  response[:id]
-			
+			if http.status.include? "200"
+				response = JSON.parse(http.body_str, symbolize_names: true)
+				id =  response[:id]
+			else
+				id = 0
+			end
 			id
 		end
 

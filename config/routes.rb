@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'influencers/index'
+
   resources :klout, only: :show
   resources :followerwonk, only: :index
+
+  resources :influencers
 
   namespace :api, defaults: {format: :json} do
     resources :twitter do
