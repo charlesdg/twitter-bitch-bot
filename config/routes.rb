@@ -26,6 +26,11 @@ Rails.application.routes.draw do
         get 'follow/:twitter_id', action: 'follow'
       end
     end
+    resources :twitter do
+      collection do
+        get 'follow/:twitter_id', action: 'follow'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
