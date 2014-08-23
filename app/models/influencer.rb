@@ -42,5 +42,4 @@ class Influencer < ActiveRecord::Base
 		end
 		p @followers_25
 	end
-
 end
