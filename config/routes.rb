@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
 
+  resources :klout, only: :show
 
-    resources :klout, only: :show
+  namespace :api, defaults: {format: :json} do
+    resources :klout do
+      collection do
+        get 'get_id/:twitter_id', action: 'get_id'
+      end
+    end
+    resources :twitter do
+      collection do
+        get 'follow/:twitter_id', action: 'follow'
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
