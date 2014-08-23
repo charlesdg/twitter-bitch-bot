@@ -1,5 +1,5 @@
 class InfluencersController < ApplicationController
   def index
-  	@influencers = Influencer.all
+  	@influencers = Influencer.order("klout_score DESC")
   end
 end
