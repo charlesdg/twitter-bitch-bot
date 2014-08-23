@@ -48,4 +48,6 @@ gem 'pg'
 # Curl
 gem 'curb'
 
-
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'

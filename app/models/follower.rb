@@ -2,6 +2,8 @@
 class Follower < ActiveRecord::Base
 	belongs_to :influencer
 
+	scope :activity_during_this_month, lambda { where("last_tweet > ?", Time.now-1.month) }
+
 	def self.create(tweets, following, followers, username, twitter_id, location, lang, last_tweet)
 		@klout_id = Klout.get_id(twitter_id)
 		@follower = Follower.new

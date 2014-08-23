@@ -31,4 +31,14 @@ class Influencer < ActiveRecord::Base
 		end
 	end
 
+	def self.update_social_authority
+		i = 1
+		@followers_25 = Array.new
+		Influencer.all.each do |i|
+			@followers_25.push(i.username_twitter)
+			#Followerwonk.get_social_authority(@followers_25)
+		end
+		p @followers_25
+	end
+
 end
