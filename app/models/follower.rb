@@ -2,6 +2,8 @@
 class Follower < ActiveRecord::Base
 	belongs_to :influencer
 
+	validates :twitter_id, uniqueness: true
+
 	scope :activity_during_this_month, lambda { where("last_tweet > ?", Time.now-1.month) }
 
 	def self.create(tweets, following, followers, username, twitter_id, location, lang, last_tweet)
@@ -17,7 +19,7 @@ class Follower < ActiveRecord::Base
 		@follower.klout_id = @klout_id
 		@follower.klout_score = Klout.get_score(@klout_id)
 		@follower.twitter_id = twitter_id
-		@follower.save!
+		@follower.save
 	end
 
 end

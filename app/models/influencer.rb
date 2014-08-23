@@ -2,6 +2,8 @@ class Influencer < ActiveRecord::Base
 	has_many :topics
 	has_many :followers
 
+	validates :twitter_id, uniqueness: true
+
 	def self.create(tweets, following, followers, username, twitter_id, location)
 		@klout_id = Klout.get_id(twitter_id)
 		@influencer = Influencer.new
@@ -13,7 +15,7 @@ class Influencer < ActiveRecord::Base
 		@influencer.klout_id = @klout_id
 		@influencer.klout_score = Klout.get_score(@klout_id)
 		@influencer.twitter_id = twitter_id
-		@influencer.save!
+		@influencer.save
 
 		@influencer
 
