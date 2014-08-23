@@ -9,12 +9,12 @@ class Twitterapp < ActiveRecord::Base
 		config.oauth_token_secret = 'aO8VU5YYxD7MkcDgAZc8rj5sCozow34FBrn7KXLHh5mcf'
 	end
 
-		def self.follow
-			@@client.follow("cidoum")
+		def self.follow(twitter_username)
+			@@client.follow(twitter_username)
 		end
 
-		def self.unfollow
-			@@client.unfollow("cidoum")
+		def self.unfollow(twitter_username)
+			@@client.unfollow(twitter_username)
 		end
 
 		def self.search_keyword(keyword, occurence)

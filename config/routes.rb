@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'influencers/index'
+
   resources :klout, only: :show
 
   resources :influencers

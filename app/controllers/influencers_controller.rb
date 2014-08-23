@@ -1,7 +1,5 @@
 class InfluencersController < ApplicationController
-
-	def index
-		@influencers = Influencer.order("created_at desc")
-	end
-
+  def index
+  	@influencers = Influencer.all
+  end
 end
