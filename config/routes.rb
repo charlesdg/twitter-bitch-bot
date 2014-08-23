@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :klout, only: :show
 
+  resources :influencers
+
   namespace :api, defaults: {format: :json} do
     resources :klout do
       collection do
