@@ -5,4 +5,7 @@ class KloutController < ApplicationController
 		@score = Klout.get_score(@id)
 		@topics = Klout.get_topics(@id)
 	end
+
+	
+
 end
