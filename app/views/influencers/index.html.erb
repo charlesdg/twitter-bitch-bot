@@ -1,5 +1,5 @@
 Influencers: <%= @influencers.count %>
 <br><br>
 <% @influencers.each do |f| %>
-	Id: <%= f.id %> - klout_score: <%= f.klout_score %> - tweets: <%= f.tweets %> - following: <%= f.following %> - followers: <%= f.followers %> - twitter: <%= f.username_twitter %> - klout_id: <%= f.klout_id %> - twitter_id: <%= f.twitter_id %><br>
+	Id: <%= f.id %> - klout_score: <%= f.klout_score %> - tweets: <%= f.tweets %> - following: <%= f.following %> - followers: <%= f.followers_c %> - twitter: <%= f.username_twitter %> - klout_id: <%= f.klout_id %> - twitter_id: <%= f.twitter_id %><br>
 <% end %>

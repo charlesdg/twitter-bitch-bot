@@ -1,0 +1,5 @@
+Followers: <%= @followers.count %>
+<br><br>
+<% @followers.each do |f| %>
+	Id: <%= f.id %> - klout_score: <%= f.klout_score %> - tweets: <%= f.tweets %> - following: <%= f.following %> - followers: <%= f.followers_c %> - twitter: <%= f.username_twitter %> - klout_id: <%= f.klout_id %> - twitter_id: <%= f.twitter_id %> - location: <%= f.location %> - lang: <%= f.lang %> - last_tweet: <%= l f.last_tweet %><br>
+<% end %>

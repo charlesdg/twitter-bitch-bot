@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :klout, only: :show
   resources :followerwonk, only: :index
 
-  resources :influencers
+  resources :influencers, only: :index
+  resources :followers, only: :index
 
   namespace :api, defaults: {format: :json} do
     resources :twitter do

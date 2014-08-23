@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823160011) do
+ActiveRecord::Schema.define(version: 20140823172846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140823160011) do
   create_table "followers", force: true do |t|
     t.integer  "tweets"
     t.integer  "following"
-    t.integer  "followers"
+    t.integer  "followers_c"
     t.string   "username_twitter"
     t.string   "klout_id"
     t.integer  "klout_score"
@@ -29,12 +29,15 @@ ActiveRecord::Schema.define(version: 20140823160011) do
     t.integer  "influencer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "twitter_id",       limit: 8
   end
+
+  add_index "followers", ["twitter_id"], name: "index_followers_on_twitter_id", unique: true, using: :btree
 
   create_table "influencers", force: true do |t|
     t.integer  "tweets"
     t.integer  "following"
-    t.integer  "followers"
+    t.integer  "followers_c"
     t.string   "username_twitter"
     t.string   "klout_id"
     t.integer  "klout_score"
@@ -43,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140823160011) do
     t.integer  "twitter_id",       limit: 8
     t.string   "location"
   end
+
+  add_index "influencers", ["twitter_id"], name: "index_influencers_on_twitter_id", unique: true, using: :btree
 
   create_table "topics", force: true do |t|
     t.integer  "influencer_id"
