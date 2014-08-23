@@ -36,10 +36,10 @@ class Twitterapp < ActiveRecord::Base
 				end
 				puts "#{running_count} done"
 				#cursor = friends.next_cursor
-				break if cursor == 0
+				#break if cursor == 0
 			rescue Twitter::Error::TooManyRequests => error
 				if num_attempts <= max_attempts
-					cursor = friends.next_cursor if friends && friends.next_cursor
+					#cursor = friends.next_cursor if friends && friends.next_cursor
 					puts "#{running_count} done from rescue block..."
 					puts "Hit rate limit, sleeping for #{error.rate_limit.reset_in}..."
 					sleep error.rate_limit.reset_in
