@@ -11,4 +11,10 @@ class FollowerwonkController < ApplicationController
 		head 204
 	end
 
+	def remove_worker
+		ResetWorker.perform_async
+
+		head 204
+	end
+
 end
