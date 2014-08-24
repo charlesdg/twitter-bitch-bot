@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140824091027) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "twitter_id",       limit: 8
+    t.decimal  "social_authority"
   end
 
   add_index "followers", ["twitter_id"], name: "index_followers_on_twitter_id", unique: true, using: :btree

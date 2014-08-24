@@ -11,34 +11,17 @@ Rails.application.routes.draw do
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :klout, only: :show
-  resources :followerwonk, only: :index
+  resources :followerwonk, only: :index do
+    collection do
+      get 'worker'
+    end
+  end
 
   resources :influencers, only: :index
   resources :followers, only: :index
   resources :campaigns, only: [:index, :edit]
 
-  namespace :api, defaults: {format: :json} do
-    resources :twitter do
-      collection do
-        get 'follow/:twitter_id', action: 'follow'
-      end
-    end
-    resources :twitter do
-      collection do
-        get 'follow/:twitter_id', action: 'follow'
-      end
-    end
-    resources :twitter do
-      collection do
-        get 'follow/:twitter_id', action: 'follow'
-      end
-    end
-    resources :twitter do
-      collection do
-        get 'follow/:twitter_id', action: 'follow'
-      end
-    end
-  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
