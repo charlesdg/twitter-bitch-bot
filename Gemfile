@@ -52,4 +52,11 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+# Crypto
 gem 'httparty'
+
+# Worker
+gem 'sidekiq'
+
+# Redis
+gem 'redis-rails'
