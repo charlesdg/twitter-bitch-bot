@@ -40,6 +40,7 @@ class Influencer < ActiveRecord::Base
 			@followers_25.push(i.username_twitter)
 			#Followerwonk.get_social_authority(@followers_25)
 		end
+		Followerwonk.get_social_authority(["BonPlanJardin", "hebequet"])
 		p @followers_25
 	end
 end

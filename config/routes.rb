@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   get 'influencers/index'
 
+  root :to => "welcome#index"
+
+  get 'home', to: 'users#home', as: 'home'
+
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
   resources :klout, only: :show
   resources :followerwonk, only: :index do
     collection do
@@ -14,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :influencers, only: :index
   resources :followers, only: :index
+  resources :campaigns, only: [:index, :edit]
 
 
 
