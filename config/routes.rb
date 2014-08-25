@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :followerwonk, only: :index do
     collection do
       get 'worker'
+      get 'remove_worker'
     end
   end
 
