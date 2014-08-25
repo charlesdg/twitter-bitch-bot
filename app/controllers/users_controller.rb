@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user
 
-  def home
-  	render :layout => 'application'
-  end
-
   # GET /users/:id.:format
   def show
     # authorize! :read, @user

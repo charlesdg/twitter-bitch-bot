@@ -10,4 +10,8 @@ class CampaignsController < ActionController::Base
 	def edit
 		render :layout => 'application'
 	end
+
+	def new
+		render :layout => 'application'
+	end
 end

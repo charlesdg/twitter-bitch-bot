@@ -47,6 +47,8 @@ class Twitterapp < ActiveRecord::Base
 				else
 					raise
 				end
+			rescue
+				
 			end
 		end
 	end
